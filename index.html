@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LordNode - Modern Game Hosting</title>
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
@@ -74,11 +71,11 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Slider */
+        /* Hero Slider - Path updated to relative */
         .hero-section {
             position: relative;
             height: 650px;
-            background: url('/static/images/minecraft.png') no-repeat center center;
+            background: url('static/images/minecraft.png') no-repeat center center;
             background-size: cover;
             display: flex;
             align-items: center;
@@ -209,37 +206,36 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">Lord<span>Node</span></a>
+            <a class="navbar-brand" href="index.html">Lord<span>Node</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lordNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="lordNavbar">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Minecraft Hosting</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/minecraft">Minecraft (Java/Bedrock)</a></li>
-                            <li><a class="dropdown-item" href="/pocketmine">Pocketmine-MP</a></li>
+                            <li><a class="dropdown-item" href="minecraft.html">Minecraft (Java/Bedrock)</a></li>
+                            <li><a class="dropdown-item" href="pocketmine.html">Pocketmine-MP</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Hosting</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/vps">VPS Hosting</a></li>
-                            <li><a class="dropdown-item" href="/discord">Discord Hosting</a></li>
+                            <li><a class="dropdown-item" href="vps.html">VPS Hosting</a></li>
+                            <li><a class="dropdown-item" href="discord.html">Discord Hosting</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Important</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/tos">Terms of Service</a></li>
-                            <li><a class="dropdown-item" href="/privacy">Privacy Policy</a></li>
+                            <li><a class="dropdown-item" href="tos.html">Terms of Service</a></li>
+                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -247,7 +243,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero-section">
         <div class="container hero-content">
             <div class="row">
@@ -255,7 +250,7 @@
                     <h1 class="display-3 fw-bold">Premium Game Hosting</h1>
                     <p class="lead">Experience the ultimate performance with our specialized hosting solutions. Low latency, high uptime, and 24/7 support.</p>
                     <div class="d-flex gap-3">
-                        <a href="/minecraft" class="btn btn-client px-5 py-3 fs-5">View Plans</a>
+                        <a href="minecraft.html" class="btn btn-client px-5 py-3 fs-5">View Plans</a>
                         <a href="https://discord.gg/Suvu2ZVQMu" target="_blank" class="btn btn-outline-light px-5 py-3 fs-5 rounded-4">Join Community</a>
                     </div>
                 </div>
@@ -263,7 +258,6 @@
         </div>
     </div>
 
-    <!-- Features Section -->
     <div class="container my-5 py-5">
         <div class="text-center mb-5 section-title">
             <h2>The features you deserve</h2>
@@ -316,7 +310,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer-discord-label py-3" style="background: var(--blue); color: var(--white);">
         <div class="container">
             <div class="row d-flex justify-content-between align-items-center">
@@ -342,16 +335,16 @@
                         <div class="col-md-6 mb-4">
                             <h4 class="text-white mb-3 fs-5">Services</h4>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="/minecraft" class="text-muted text-decoration-none">Minecraft Hosting</a></li>
-                                <li class="mb-2"><a href="/vps" class="text-muted text-decoration-none">VPS Hosting</a></li>
-                                <li class="mb-2"><a href="/discord" class="text-muted text-decoration-none">Discord Hosting</a></li>
+                                <li class="mb-2"><a href="minecraft.html" class="text-muted text-decoration-none">Minecraft Hosting</a></li>
+                                <li class="mb-2"><a href="vps.html" class="text-muted text-decoration-none">VPS Hosting</a></li>
+                                <li class="mb-2"><a href="discord.html" class="text-muted text-decoration-none">Discord Hosting</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 mb-4">
                             <h4 class="text-white mb-3 fs-5">Legal</h4>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Terms of Service</a></li>
-                                <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                                <li class="mb-2"><a href="tos.html" class="text-muted text-decoration-none">Terms of Service</a></li>
+                                <li class="mb-2"><a href="privacy.html" class="text-muted text-decoration-none">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
