@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | LordNode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --background: #141627;
+            --dark: #1c1f37;
+            --light-dark: #252a43;
+            --white: #fff;
+            --light: #cdcfe3;
+            --blue: #0195f4;
+            --accent-glow: rgba(1, 149, 244, 0.3);
+        }
+        body { background-color: var(--background); color: var(--white); font-family: 'Poppins', sans-serif; }
+        .navbar { padding: 20px 0; background: rgba(28, 31, 55, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .navbar-brand { font-weight: 500; font-size: 1.5rem; color: var(--white) !important; }
+        .navbar-brand span { font-weight: 800; color: var(--blue); }
+        .nav-link { color: var(--white) !important; margin: 0 10px; }
+        .header { padding: 100px 0; background: linear-gradient(rgba(20, 22, 39, 0.8), rgba(20, 22, 39, 0.8)); text-align: center; }
+        .content-card { background: var(--dark); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 50px; margin-top: -50px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); max-width: 900px; margin-left: auto; margin-right: auto; min-height: 500px; }
+        h2 { color: var(--blue); font-weight: 700; margin-bottom: 25px; border-left: 4px solid var(--blue); padding-left: 15px; }
+        .policy-section { margin-bottom: 40px; }
+        .policy-section p { color: var(--white); }
+        .policy-section li { color: var(--white); }
+        .dropdown-menu { background: var(--dark); border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .dropdown-item { color: var(--white) !important; border-radius: 8px; padding: 10px 20px; font-size: 14px; transition: all 0.3s; }
+        .dropdown-item:hover { background: rgba(1, 149, 244, 0.1) !important; color: var(--blue) !important; }
+        .non-refundable { background: rgba(244, 67, 54, 0.1); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 10px 10px 0; margin-bottom: 20px; }
+        .refundable { background: rgba(76, 175, 80, 0.1); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 10px 10px 0; }
+        .footer-discord-label { background: var(--blue); color: var(--white); padding: 15px 0; margin-top: 50px; }
+        .text-muted { color: rgba(255, 255, 255, 0.6) !important; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Lord<span>Node</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lordNavbar"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="lordNavbar">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Minecraft Hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/minecraft">Minecraft (Java/Bedrock)</a></li>
+                            <li><a class="dropdown-item" href="/pocketmine">Pocketmine-MP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/vps">VPS Hosting</a></li>
+                            <li><a class="dropdown-item" href="/discord">Discord Hosting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Important</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="/tos">Terms of Service</a></li>
+                            <li><a class="dropdown-item" href="/privacy">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-white">Terms of Service</h1>
+            <p class="lead">LordNode | IT Solution - Professional Hosting Standards</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="content-card">
+            <div class="policy-section">
+                <h2>Refund Policy Update</h2>
+                <p>Welcome to LordNode. Our refund policy is designed to be fair while ensuring the sustainability of our high-performance infrastructure.</p>
+                
+                <div class="non-refundable">
+                    <h4 class="text-white mb-3"><i class="fas fa-times-circle me-2"></i> Non-Refundable Products</h4>
+                    <ul class="list-unstyled mb-0">
+                        <li>• Domains</li>
+                        <li>• Dedicated Servers</li>
+                        <li>• VPS (Virtual Private Servers)</li>
+                        <li>• Custom Plans</li>
+                    </ul>
+                    <p class="mt-3 mb-0 small text-white"><strong>Note:</strong> If any technical issue persists with these products, they will be replaced instead of refunded.</p>
+                </div>
+
+                <div class="refundable">
+                    <h4 class="text-white mb-3"><i class="fas fa-check-circle me-2"></i> Refundable Products</h4>
+                    <p>Refunds can be claimed within <strong>24 hours</strong> of purchase time for:</p>
+                    <ul class="list-unstyled mb-0">
+                        <li>• Minecraft Servers</li>
+                        <li>• Discord Bots</li>
+                        <li>• Web Hosting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>Important Conditions</h2>
+                <ul>
+                    <li>Refunds are only processed if a technical issue persists from our side.</li>
+                    <li><strong>No Refunds</strong> will be given for "change of mind" or "mood change".</li>
+                    <li>If any client abuse is detected, all refund rights are immediately forfeited.</li>
+                    <li>Approved refunds will be delivered within <strong>7 business days</strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-discord-label py-3">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-lg-8">
+                    <p class="mb-0 fw-500 text-white">Join our Discord server for exclusive industry news, updates & giveaways!</p>
+                </div>
+                <div class="col-lg-2 text-end">
+                    <a href="https://discord.gg/Suvu2ZVQMu" target="_blank" class="btn btn-light fw-600 px-4">Join Discord</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-main pt-5 pb-4" style="background: #0d0f1a; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-start">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="mb-3 text-white fw-bold">Lord<span style="color: var(--blue);">Node</span></h3>
+                    <p class="text-muted">Providing high-performance game hosting solutions with 24/7 support and instant deployment.</p>
+                    <p class="copy text-muted mt-4">&copy; Copyright 2026 LordNode. All Rights Reserved</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h4 class="text-white mb-3 fs-5">Services</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/minecraft" class="text-muted text-decoration-none">Minecraft Hosting</a></li>
+                                <li class="mb-2"><a href="/vps" class="text-muted text-decoration-none">VPS Hosting</a></li>
+                                <li class="mb-2"><a href="/discord" class="text-muted text-decoration-none">Discord Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h4 class="text-white mb-3 fs-5">Legal</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/tos" class="text-muted text-decoration-none">Terms of Service</a></li>
+                                <li class="mb-2"><a href="/privacy" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
