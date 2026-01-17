@@ -3,84 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LordNode | Premium Game Hosting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>LordNode | Premium Game & VPS Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
         :root {
-            --bg-dark: #0d1117;
-            --navbar-bg: #161b22;
-            --blue-glow: #00d2ff;
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #0d1117;
+            --navbar: #161b22;
+            --blue: #0095f4;
+            --blue-glow: rgba(0, 149, 244, 0.3);
+            --text-muted: #94a3b8;
         }
 
-        body { 
-            background-color: var(--bg-dark); 
-            color: #eee; 
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            overflow-x: hidden;
         }
 
-        /* --- NAVBAR (Same as Screenshot) --- */
-        .navbar { background-color: var(--navbar-bg); border-bottom: 1px solid var(--border); padding: 15px 0; }
-        .navbar-brand { font-weight: 800; font-size: 1.5rem; color: #fff !important; }
-        .navbar-brand span { color: var(--blue-glow); }
-        .navbar-toggler { border: 2px solid var(--border); }
-        
-        .nav-link { color: #fff !important; font-weight: 500; text-align: center; padding: 10px 0; font-size: 1.1rem; }
-        .dropdown-menu { background: #1c2128; border: 1px solid var(--border); border-radius: 12px; text-align: center; }
-        .dropdown-item { color: #94a3b8 !important; padding: 10px; }
-        .dropdown-item:hover { background: rgba(255,255,255,0.05); color: #fff !important; }
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(22, 27, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 15px 0;
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.6rem; color: #fff !important; }
+        .navbar-brand span { color: var(--blue); }
+        .nav-link { color: #fff !important; font-weight: 500; margin: 0 12px; transition: 0.3s; }
+        .nav-link:hover { color: var(--blue) !important; }
 
-        /* --- HERO SECTION --- */
-        .hero-section { 
-            padding: 100px 0 80px; 
-            background-image: radial-gradient(circle at 80% 20%, #002b4d, transparent 40%);
-        }
-        .hero-title { font-size: 4.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 25px; color: #fff; }
-        .hero-subtitle { font-size: 1.3rem; color: #94a3b8; line-height: 1.6; margin-bottom: 40px; max-width: 600px; }
-        
-        /* Buttons from Screenshot */
-        .btn-blue-main { 
-            background: #0095ff; color: #fff; border-radius: 12px; 
-            padding: 18px 35px; font-weight: 800; border: none; 
-            text-decoration: none; display: inline-block; font-size: 1.2rem;
-            transition: 0.3s;
-        }
-        .btn-blue-main:hover { background: #0076cc; transform: translateY(-3px); color: #fff; }
+        .dropdown-menu { background: var(--navbar); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 10px; }
+        .dropdown-item { color: var(--text-muted) !important; padding: 10px 20px; border-radius: 8px; }
+        .dropdown-item:hover { background: rgba(0, 149, 244, 0.1); color: var(--blue) !important; }
 
-        .btn-outline-join { 
-            background: transparent; color: #fff; border: 1px solid var(--border); 
-            border-radius: 12px; padding: 18px 35px; font-weight: 800; 
-            text-decoration: none; display: inline-block; font-size: 1.2rem;
-            transition: 0.3s;
+        /* Hero Section (Bada aur Attractive) */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 149, 244, 0.1), transparent),
+                        radial-gradient(circle at 20% 80%, rgba(0, 149, 244, 0.05), transparent);
+            padding: 100px 0;
         }
-        .btn-outline-join:hover { background: rgba(255,255,255,0.05); transform: translateY(-3px); color: #fff; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; margin: 25px 0 40px; max-width: 600px; }
+
+        .btn-primary-custom {
+            background: var(--blue); color: #000; font-weight: 700; padding: 16px 40px;
+            border-radius: 12px; text-decoration: none; display: inline-block; transition: 0.3s;
+        }
+        .btn-primary-custom:hover { transform: translateY(-3px); box-shadow: 0 10px 25px var(--blue-glow); color: #000; }
+
+        .btn-outline-custom {
+            background: transparent; color: #fff; font-weight: 700; padding: 16px 40px;
+            border-radius: 12px; text-decoration: none; display: inline-block; border: 1px solid rgba(255,255,255,0.1); margin-left: 15px; transition: 0.3s;
+        }
+        .btn-outline-custom:hover { background: rgba(255,255,255,0.05); border-color: #fff; }
+
+        /* Stats Section */
+        .stats { background: var(--navbar); padding: 60px 0; border-y: 1px solid rgba(255,255,255,0.05); }
+        .stat-item h2 { color: var(--blue); font-weight: 800; margin-bottom: 5px; }
+        .stat-item p { color: var(--text-muted); font-weight: 500; margin: 0; }
 
         /* Features Section */
-        .feature-box { background: var(--navbar-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--border); height: 100%; transition: 0.3s; }
-        .feature-box:hover { border-color: var(--blue-glow); }
-        .feature-icon { font-size: 2rem; color: var(--blue-glow); margin-bottom: 15px; }
+        .features { padding: 100px 0; }
+        .feature-card {
+            background: var(--navbar); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.03);
+            height: 100%; transition: 0.4s;
+        }
+        .feature-card:hover { transform: translateY(-10px); border-color: var(--blue); }
+        .feature-icon {
+            width: 60px; height: 60px; background: rgba(0, 149, 244, 0.1); color: var(--blue);
+            display: flex; align-items: center; justify-content: center; border-radius: 15px; font-size: 1.5rem; margin-bottom: 25px;
+        }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-title { font-size: 3.2rem; }
-            .btn-blue-main, .btn-outline-join { width: 100%; text-align: center; margin-bottom: 15px; }
+            .hero { text-align: center; padding: 60px 0; }
+            .hero p { margin-inline: auto; }
+            .btn-outline-custom { margin-left: 0; margin-top: 15px; width: 100%; }
+            .btn-primary-custom { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">Lord<span>Node</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#lordNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
+        <div class="collapse navbar-collapse" id="lordNavbar">
+            <ul class="navbar-nav ms-auto align-items-center text-center">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Minecraft Hosting</a>
@@ -108,44 +127,91 @@
     </div>
 </nav>
 
-<div class="container hero-section">
-    <div class="row align-items-center">
-        <div class="col-lg-12">
-            <h1 class="hero-title">Premium<br>Game Hosting</h1>
-            <p class="hero-subtitle">Experience the ultimate performance with our specialized hosting solutions. Built for gamers, by gamers.</p>
-            <div class="d-flex flex-wrap gap-3">
-                <a href="minecraft.html" class="btn-blue-main">View Plans</a>
-                <a href="https://discord.gg/P5w9tTe7s8" class="btn-outline-join">Join Community</a>
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-1">Premium <br><span style="color: var(--blue);">Game Hosting</span></h1>
+                <p>Deploy high-performance servers with instant setup, enterprise-grade hardware, and 24/7 expert support. Experience gaming without limits.</p>
+                <div class="hero-btns">
+                    <a href="#plans" class="btn-primary-custom">Get Started</a>
+                    <a href="https://discord.gg/your-link" class="btn-outline-custom">Join Community</a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="https://via.placeholder.com/500x500/0d1117/0095f4?text=Server+Power" class="img-fluid" alt="Hosting">
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container pb-5">
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-bolt feature-icon"></i>
-                <h4>Instant Setup</h4>
-                <p class="text-muted">Payment ke turant baad aapka server auto-deploy ho jata hai.</p>
+<section class="stats">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3 stat-item">
+                <h2>1000+</h2>
+                <p>Active Users</p>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-shield-virus feature-icon"></i>
-                <h4>DDoS Protection</h4>
-                <p class="text-muted">Enterprise grade protection taaki aapka server kabhi down na ho.</p>
+            <div class="col-md-3 stat-item">
+                <h2>99.9%</h2>
+                <p>Uptime Record</p>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-headset feature-icon"></i>
-                <h4>24/7 Support</h4>
-                <p class="text-muted">Humari team hamesha ready hai aapki har problem solve karne ke liye.</p>
+            <div class="col-md-3 stat-item">
+                <h2>15+</h2>
+                <p>Global Locations</p>
+            </div>
+            <div class="col-md-3 stat-item">
+                <h2>24/7</h2>
+                <p>Live Support</p>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-uppercase fw-bold" style="color: var(--blue); letter-spacing: 2px;">Why Choose Us</h6>
+            <h2 class="display-5 fw-bold">Built for Performance</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Instant Deployment</h4>
+                    <p class="text-muted">No waiting time. Your server is ready as soon as the payment is confirmed.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h4>DDoS Protection</h4>
+                    <p class="text-muted">Enterprise-grade protection to keep your server safe from any attacks.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Ryzen Hardware</h4>
+                    <p class="text-muted">We use the latest AMD Ryzen processors to ensure smooth gameplay.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-5" style="background: var(--navbar); border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-4">Lord<span>Node</span></h3>
+        <p class="text-muted mb-4">Providing the best hosting experience since 2026.</p>
+        <div class="social-links mb-4">
+            <a href="#" class="text-white mx-2"><i class="fab fa-discord fa-lg"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+        <p class="small text-muted">&copy; 2026 LordNode. All Rights Reserved.</p>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
