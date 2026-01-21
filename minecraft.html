@@ -10,99 +10,116 @@
     
     <style>
         :root {
-            --bg-dark: #0d1117;
-            --navbar-bg: #161b22;
-            --blue-glow: #00d2ff;
-            --premium-purple: #7000ff;
-            --card-bg: #161b22;
+            --bg-dark: #06080c;
+            --nav-bg: #0d1117;
+            --accent-cyan: #00f2ff;
+            --card-bg: #11161d;
             --border: rgba(255, 255, 255, 0.08);
         }
 
         body { 
             background-color: var(--bg-dark); 
-            color: #eee; 
+            color: #ffffff; 
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
         }
 
-        /* --- NAVBAR (Same as Screenshot) --- */
-        .navbar { background-color: var(--navbar-bg); border-bottom: 1px solid var(--border); padding: 15px 0; }
-        .navbar-brand { font-weight: 800; font-size: 1.5rem; color: #fff !important; }
-        .navbar-brand span { color: var(--blue-glow); }
-        .nav-link { color: #fff !important; font-weight: 500; text-align: center; padding: 10px 0; }
+        /* --- Updated Navbar --- */
+        .navbar { 
+            background: var(--nav-bg); 
+            border-bottom: 1px solid var(--border); 
+            padding: 15px 0; 
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.6rem; color: #fff !important; }
+        .navbar-brand span { color: var(--accent-cyan); }
+        .nav-link { color: #94a3b8 !important; font-weight: 600; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-cyan) !important; }
         
-        .dropdown-menu { background: #1c2128; border: 1px solid var(--border); text-align: center; }
-        .dropdown-item { color: #94a3b8 !important; font-weight: 500; }
-        .dropdown-item:hover { background: rgba(255,255,255,0.05); color: #fff !important; }
+        .dropdown-menu { background: #161b22; border: 1px solid var(--border); border-radius: 12px; }
+        .dropdown-item { color: #94a3b8 !important; font-weight: 500; padding: 10px 20px; }
+        .dropdown-item:hover { background: rgba(0, 242, 255, 0.1); color: #fff !important; }
 
-        /* --- HEADER SECTION --- */
-        .header-section { padding: 60px 0 30px; text-align: center; }
-        .tier-tabs { background: var(--card-bg); padding: 6px; border-radius: 14px; display: inline-flex; border: 1px solid var(--border); margin-bottom: 40px; }
-        .tab-btn { padding: 12px 30px; border: none; background: transparent; color: #888; font-weight: 800; border-radius: 10px; transition: 0.3s; cursor: pointer; }
-        .tab-btn.active { background: var(--blue-glow); color: #000; box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); }
-        .tab-btn.active.premium-active { background: var(--premium-purple); color: #fff; box-shadow: 0 0 20px rgba(112, 0, 255, 0.3); }
+        /* --- Hero & Features --- */
+        .hero-section { padding: 80px 0 40px; text-align: center; }
+        .hero-title { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
+        .hero-title span { color: var(--accent-cyan); text-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
 
-        /* --- PLAN CARDS --- */
+        .trust-bar { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 50px; }
+        .trust-tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; color: #cbd5e1; }
+        .trust-tag i { color: var(--accent-cyan); margin-right: 8px; }
+
+        /* --- Premium Card Design --- */
         .plan-card {
-            background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
-            padding: 25px; height: 100%; transition: 0.3s ease; display: flex; flex-direction: column;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
         }
-        .plan-card:hover { transform: translateY(-8px); border-color: var(--blue-glow); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .premium-card:hover { border-color: var(--premium-purple); }
-
-        .plan-title { font-size: 1.2rem; font-weight: 800; color: #fff; }
-        .price-tag { font-size: 2rem; font-weight: 800; margin: 10px 0; }
-        .price-tag small { font-size: 0.9rem; color: #666; }
-
-        .specs-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-            margin: 20px 0; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 15px;
+        .plan-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 242, 255, 0.1);
         }
-        .spec-item { text-align: center; }
-        .spec-item i { color: var(--blue-glow); font-size: 0.75rem; display: block; margin-bottom: 5px; }
-        .premium-card .spec-item i { color: var(--premium-purple); }
-        .spec-label { font-size: 0.6rem; color: #777; text-transform: uppercase; font-weight: 700; }
-        .spec-val { font-size: 0.85rem; font-weight: 800; color: #fff; display: block; }
+
+        .memory-label { 
+            color: var(--accent-cyan); 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .price-box { font-size: 3rem; font-weight: 800; margin: 10px 0 25px; }
+        .price-box small { font-size: 1rem; color: #64748b; font-weight: 400; }
+
+        .spec-list { list-style: none; padding: 0; margin-bottom: 30px; }
+        .spec-list li { 
+            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); 
+            font-size: 0.95rem; color: #94a3b8; display: flex; justify-content: space-between;
+        }
+        .spec-list li b { color: #fff; }
 
         .btn-order {
-            background: var(--blue-glow); color: #000; text-align: center; padding: 12px; border-radius: 10px;
-            text-decoration: none !important; font-weight: 800; font-size: 0.85rem; margin-top: auto; transition: 0.3s;
+            background: linear-gradient(135deg, var(--accent-cyan), #00a2ff);
+            color: #000;
+            width: 100%;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: 800;
+            text-decoration: none !important;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .premium-card .btn-order { background: var(--premium-purple); color: #fff; }
-        .btn-order:hover { filter: brightness(1.2); transform: scale(1.02); }
-
-        .d-none { display: none; }
+        .btn-order:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3); color: #000; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">Lord<span>Node</span></a>
         <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Minecraft Hosting</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" onclick="toggle('budget')">Budget Server</a></li>
-                        <li><a class="dropdown-item" onclick="toggle('premium')">Premium Server</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Hosting</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="vps.html">VPS Hosting</a></li>
-                        <li><a class="dropdown-item" href="discord.html">Discord Hosting</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a class="nav-link active" href="minecraft.html">Minecraft</a></li>
+                <li class="nav-item"><a class="nav-link" href="vps.html">VPS Hosting</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Important</a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="tos.html">Terms of Service</a></li>
+                        <li><a class="dropdown-item" href="tos.html">Terms of Policy</a></li>
                         <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </li>
@@ -111,157 +128,51 @@
     </div>
 </nav>
 
-<div class="header-section">
+<div class="hero-section">
     <div class="container">
-        <h1 class="fw-800">Minecraft <span style="color: var(--blue-glow);">Server Hosting</span></h1>
-        <div class="tier-tabs">
-            <button class="tab-btn active" id="b-tab" onclick="toggle('budget')">Budget Server</button>
-            <button class="tab-btn" id="p-tab" onclick="toggle('premium')">Premium Server</button>
+        <h1 class="hero-title">Extreme <span>Minecraft</span> Performance</h1>
+        <div class="trust-bar">
+            <div class="trust-tag"><i class="fas fa-shield-virus"></i> DDoS Protected</div>
+            <div class="trust-tag"><i class="fas fa-clock"></i> 99.9% Uptime</div>
+            <div class="trust-tag"><i class="fas fa-headset"></i> 24/7 Support</div>
         </div>
     </div>
 </div>
 
 <div class="container pb-5">
-    <div id="budget-sec" class="row g-4">
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card">
-                <div class="plan-title">Budget 2G</div>
-                <div class="price-tag">₹99<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-microchip"></i><span class="spec-label">CPU</span><span class="spec-val">1 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">2GB</span></div>
-                    <div class="spec-item"><i class="fas fa-hdd"></i><span class="spec-label">DISK</span><span class="spec-val">10GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/budget-minecraft-server/2gb-budget-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card">
-                <div class="plan-title">Budget 4G</div>
-                <div class="price-tag">₹199<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-microchip"></i><span class="spec-label">CPU</span><span class="spec-val">1 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">4GB</span></div>
-                    <div class="spec-item"><i class="fas fa-hdd"></i><span class="spec-label">DISK</span><span class="spec-val">20GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/budget-minecraft-server/4gb-budget-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card">
-                <div class="plan-title">Budget 8G</div>
-                <div class="price-tag">₹449<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-microchip"></i><span class="spec-label">CPU</span><span class="spec-val">2.5 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">8GB</span></div>
-                    <div class="spec-item"><i class="fas fa-hdd"></i><span class="spec-label">DISK</span><span class="spec-val">30GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/budget-minecraft-server/8gb-budget-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card">
-                <div class="plan-title">Budget 12G</div>
-                <div class="price-tag">₹649<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-microchip"></i><span class="spec-label">CPU</span><span class="spec-val">3.5 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">12GB</span></div>
-                    <div class="spec-item"><i class="fas fa-hdd"></i><span class="spec-label">DISK</span><span class="spec-val">50GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/budget-minecraft-server/12-gb-budget-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card">
-                <div class="plan-title">Budget 16G</div>
-                <div class="price-tag">₹799<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-microchip"></i><span class="spec-label">CPU</span><span class="spec-val">4 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">16GB</span></div>
-                    <div class="spec-item"><i class="fas fa-hdd"></i><span class="spec-label">DISK</span><span class="spec-val">60GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/budget-minecraft-server/16gb-budget-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-    </div>
+    <div class="row g-4">
+        <script>
+            const plans = [
+                { r: "2GB", p: "99₹", c: "1 vCore", d: "10GB" },
+                { r: "4GB", p: "199₹", c: "2 vCore", d: "20GB" },
+                { r: "8GB", p: "449₹", c: "3 vCore", d: "40GB" },
+                { r: "16GB", p: "950₹", c: "6 vCore", d: "80GB" },
+                { r: "32GB", p: "1899₹", c: "8 vCore", d: "100GB" }
+            ];
 
-    <div id="premium-sec" class="row g-4 d-none">
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card premium-card">
-                <div class="plan-title">Premium 2G</div>
-                <div class="price-tag">₹149<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-bolt"></i><span class="spec-label">CPU</span><span class="spec-val">1 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">2GB</span></div>
-                    <div class="spec-item"><i class="fas fa-rocket"></i><span class="spec-label">NVMe</span><span class="spec-val">10GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/premium-mc-server/2gb-premium-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card premium-card">
-                <div class="plan-title">Premium 4G</div>
-                <div class="price-tag">₹299<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-bolt"></i><span class="spec-label">CPU</span><span class="spec-val">1 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">4GB</span></div>
-                    <div class="spec-item"><i class="fas fa-rocket"></i><span class="spec-label">NVMe</span><span class="spec-val">20GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/premium-mc-server/4gb-premium-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card premium-card">
-                <div class="plan-title">Premium 8G</div>
-                <div class="price-tag">₹599<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-bolt"></i><span class="spec-label">CPU</span><span class="spec-val">3 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">8GB</span></div>
-                    <div class="spec-item"><i class="fas fa-rocket"></i><span class="spec-label">NVMe</span><span class="spec-val">50GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/premium-mc-server/8gb-premium-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card premium-card">
-                <div class="plan-title">Premium 12G</div>
-                <div class="price-tag">₹950<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-bolt"></i><span class="spec-label">CPU</span><span class="spec-val">4 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">12GB</span></div>
-                    <div class="spec-item"><i class="fas fa-rocket"></i><span class="spec-label">NVMe</span><span class="spec-val">60GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/premium-mc-server/12gb-premium-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="plan-card premium-card">
-                <div class="plan-title">Premium 16G</div>
-                <div class="price-tag">₹1450<small>/mo</small></div>
-                <div class="specs-grid">
-                    <div class="spec-item"><i class="fas fa-bolt"></i><span class="spec-label">CPU</span><span class="spec-val">5 vCore</span></div>
-                    <div class="spec-item"><i class="fas fa-memory"></i><span class="spec-label">RAM</span><span class="spec-val">16GB</span></div>
-                    <div class="spec-item"><i class="fas fa-rocket"></i><span class="spec-label">NVMe</span><span class="spec-val">80GB</span></div>
-                </div>
-                <a href="https://billing.lordnode.xyz/products/premium-mc-server/16gb-premium-mc-server" class="btn-order">ORDER NOW</a>
-            </div>
-        </div>
+            plans.forEach(plan => {
+                document.write(`
+                    <div class="col-lg-4 col-md-6">
+                        <div class="plan-card">
+                            <span class="memory-label">High-Speed ${plan.r} Memory</span>
+                            <div class="price-box">₹${plan.p}<small>/mo</small></div>
+                            <ul class="spec-list">
+                                <li>Processor <b>${plan.c}</b></li>
+                                <li>Storage <b>${plan.d} NVMe</b></li>
+                                <li>Protection <b>DDoS L7</b></li>
+                                <li>Uptime <b>99.9%</b></li>
+                                <li>Database <b>MySQL Incl.</b></li>
+                            </ul>
+                            <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="btn-order">GET STARTED</a>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function toggle(tier) {
-        const bSec = document.getElementById('budget-sec'), pSec = document.getElementById('premium-sec');
-        const bTab = document.getElementById('b-tab'), pTab = document.getElementById('p-tab');
-        if(tier === 'budget') {
-            bSec.classList.remove('d-none'); pSec.classList.add('d-none');
-            bTab.classList.add('active'); pTab.classList.remove('active', 'premium-active');
-        } else {
-            pSec.classList.remove('d-none'); bSec.classList.add('d-none');
-            pTab.classList.add('active', 'premium-active'); bTab.classList.remove('active');
-        }
-    }
-</script>
 </body>
 </html>
+
