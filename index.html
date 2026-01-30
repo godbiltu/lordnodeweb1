@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LordNode | Premium Hosting Solutions</title>
+    <title>LordNode | Premium Game & Web Hosting</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -12,7 +12,8 @@
         :root {
             --bg-dark: #06080c;
             --nav-bg: #0d1117;
-            --accent: #00ff88; /* Emerald Green */
+            --accent: #00ff88; 
+            --gold: #ffcc00;
             --card-bg: #11161d;
             --border: rgba(255, 255, 255, 0.08);
             --text-gray: #94a3b8;
@@ -35,56 +36,71 @@
         .navbar-brand { font-weight: 800; font-size: 1.6rem; color: #fff !important; }
         .navbar-brand span { color: var(--accent); }
         .nav-link { color: var(--text-gray) !important; font-weight: 600; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover { color: var(--accent) !important; }
+        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
         
         .dropdown-menu { background: #161b22; border: 1px solid var(--border); border-radius: 12px; padding: 10px; }
-        .dropdown-item { color: var(--text-gray) !important; font-weight: 500; border-radius: 8px; padding: 8px 15px; }
+        .dropdown-item { color: var(--text-gray) !important; font-weight: 500; border-radius: 8px; padding: 8px 15px; margin-bottom: 5px; }
         .dropdown-item:hover { background: rgba(0, 255, 136, 0.1); color: #fff !important; }
+        .dropdown-item i { width: 25px; color: var(--accent); }
 
-        /* --- Hero Section --- */
-        .hero { padding: 120px 0 60px; text-align: center; }
-        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.2; }
+        /* --- Hero --- */
+        .hero { padding: 100px 0 60px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; }
         .hero h1 span { color: var(--accent); }
-        .hero p { color: var(--text-gray); font-size: 1.2rem; max-width: 600px; margin: 20px auto; }
 
         /* --- Service Cards --- */
         .service-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 25px;
-            padding: 40px;
+            padding: 40px 30px;
             height: 100%;
             transition: 0.4s;
             text-align: center;
+            position: relative;
         }
         .service-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(0, 255, 136, 0.1); }
-        .service-icon { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        .service-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+        .service-card.premium { border-color: rgba(255, 204, 0, 0.2); }
+        .service-card.premium:hover { border-color: var(--gold); }
+        .service-card.premium .service-icon { color: var(--gold); }
+        
         .btn-view { 
             background: var(--accent); color: #000; font-weight: 800; padding: 12px 25px; 
-            border-radius: 12px; text-decoration: none !important; display: inline-block; margin-top: 20px;
+            border-radius: 12px; text-decoration: none !important; display: inline-block; margin-top: 20px; transition: 0.3s;
         }
+        .btn-view:hover { background: #fff; transform: scale(1.05); }
 
         /* --- Footer --- */
         .footer { padding: 60px 0; border-top: 1px solid var(--border); background: #0a0c10; margin-top: 80px; text-align: center; }
-        .footer p { color: #4b5563; margin-top: 20px; font-size: 0.9rem; }
+        .footer-links a { color: var(--text-gray); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Lord<span>Node</span></a>
+        <a class="navbar-brand" href="index.html">LORD<span>NODE</span></a>
         <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link" href="https://billing.lordnode.xyz/products/mc-server-hosting">Minecraft Hosting</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://billing.lordnode.xyz/products/premium-vps">VPS Hosting</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://billing.lordnode.xyz/">Web Hosting</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hosting Services</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/mc-server-hosting"><i class="fas fa-cube"></i> Intel Platinum MC</a></li>
+                        <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/premium-mc-server"><i class="fas fa-bolt"></i> Ryzen 9 9900X MC</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/intel-vps"><i class="fas fa-server"></i> VPS Hosting</a></li>
+                        <li><a class="dropdown-item" href="https://billing.lordnode.xyz/"><i class="fas fa-globe"></i> Website Hosting</a></li>
+                    </ul>
+                </li>
                 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="tos.html" data-bs-toggle="dropdown">Legal</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Legal</a>
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="tos.html">Terms of Service</a></li>
                         <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
@@ -93,7 +109,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://billing.lordnode.xyz" class="btn-view ms-lg-3" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 0;">Login</a>
+                    <a href="https://billing.lordnode.xyz" class="btn-view ms-lg-3" style="margin-top:0; padding: 8px 20px;">Client Portal</a>
                 </li>
             </ul>
         </div>
@@ -102,54 +118,54 @@
 
 <header class="hero">
     <div class="container">
-        <h1>Powerful <span>Hosting</span><br>For Every Empire.</h1>
-        <p>High-performance servers with DDR5 RAM, NVMe storage, and 24/7 support.</p>
+        <h1>Ultimate <span>Hosting</span> Empire</h1>
+        <p>Pick the perfect hardware for your project. From budget-friendly nodes to extreme Ryzen performance.</p>
     </div>
 </header>
 
-<div class="container mb-5">
+<div class="container pb-5">
     <div class="row g-4">
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
             <div class="service-card">
-                <i class="fas fa-cube service-icon"></i>
-                <h3>Minecraft</h3>
-                <p>Lag-free gaming on Intel Platinum & Ryzen 9 nodes.</p>
-                <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="btn-view">View Plans</a>
+                <i class="fas fa-microchip service-icon"></i>
+                <h3>Intel® Platinum 8269Cy</h3>
+                <p>Reliable Minecraft hosting with 3.80GHz speed. Perfect for SMPs and small networks.</p>
+                <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="btn-view">Minecraft Plans</a>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="service-card">
-                <i class="fas fa-server service-icon"></i>
-                <h3>VPS Hosting</h3>
-                <p>Full root access and Shared resources for your apps.</p>
-                <a href="https://billing.lordnode.xyz/products/intel-vps" class="btn-view">View Plans</a>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card premium">
+                <i class="fas fa-bolt service-icon"></i>
+                <h3 style="color: var(--gold);">Ryzen™ 9 9900X</h3>
+                <p>Extreme 5.6GHz power for massive modpacks and high-player count servers.</p>
+                <a href="https://billing.lordnode.xyz/products/premium-mc-server" class="btn-order" style="background: var(--gold); color:#000; padding: 12px 25px; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-block; margin-top: 20px;">View Elite Plans</a>
             </div>
         </div>
-        <div class="col-lg-4">
+
+        <div class="col-lg-4 col-md-6">
             <div class="service-card">
                 <i class="fas fa-globe service-icon"></i>
-                <h3>Web Hosting</h3>
-                <p>Fast, secure, and reliable hosting for your websites.</p>
-                <a href="billing.lordnode.xyz" class="btn-view">View Plans</a>
+                <h3>Website Hosting</h3>
+                <p>Fast Litespeed servers with NVMe storage for your business or blog.</p>
+                <a href="https://billing.lordnode.xyz/" class="btn-view">Web Plans</a>
             </div>
         </div>
     </div>
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <h4 class="fw-bold">Lord<span>Node</span></h4>
-        <div class="mt-4">
-            <a href="tos.html" class="nav-link d-inline mx-2">TOS</a>
-            <a href="privacy.html" class="nav-link d-inline mx-2">Privacy</a>
-            <a href="tos.html" class="nav-link d-inline mx-2">Refund</a>
+    <div class="container text-center">
+        <h3 class="fw-bold">Lord<span style="color: var(--accent);">Node</span></h3>
+        <div class="footer-links mt-4">
+            <a href="tos.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="tos.html">Refund Policy</a>
         </div>
-        <p>&copy; 2026 LordNode Hosting. Built for the next generation of gamers.</p>
+        <p class="mt-4">&copy; 2026 LordNode Hosting. All rights reserved. <br> <small>Not an official Minecraft product.</small></p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
