@@ -3,176 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Hosting | LordNode</title>
+    <title>LORDNODE.XYZ | High-Performance India Hosting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
     <style>
-        :root {
-            --bg-dark: #06080c;
-            --nav-bg: #0d1117;
-            --accent-cyan: #00f2ff;
-            --card-bg: #11161d;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        body { 
-            background-color: var(--bg-dark); 
-            color: #ffffff; 
+        body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
+            background-color: #02040a;
+            /* Technical Grid Background */
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            scroll-behavior: smooth;
         }
-
-        /* --- Updated Navbar --- */
-        .navbar { 
-            background: var(--nav-bg); 
-            border-bottom: 1px solid var(--border); 
-            padding: 15px 0; 
-            backdrop-filter: blur(10px);
+        .glass-nav {
+            background: rgba(10, 15, 28, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .navbar-brand { font-weight: 800; font-size: 1.6rem; color: #fff !important; }
-        .navbar-brand span { color: var(--accent-cyan); }
-        .nav-link { color: #94a3b8 !important; font-weight: 600; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--accent-cyan) !important; }
-        
-        .dropdown-menu { background: #161b22; border: 1px solid var(--border); border-radius: 12px; }
-        .dropdown-item { color: #94a3b8 !important; font-weight: 500; padding: 10px 20px; }
-        .dropdown-item:hover { background: rgba(0, 242, 255, 0.1); color: #fff !important; }
-
-        /* --- Hero & Features --- */
-        .hero-section { padding: 80px 0 40px; text-align: center; }
-        .hero-title { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
-        .hero-title span { color: var(--accent-cyan); text-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
-
-        .trust-bar { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 50px; }
-        .trust-tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; color: #cbd5e1; }
-        .trust-tag i { color: var(--accent-cyan); margin-right: 8px; }
-
-        /* --- Premium Card Design --- */
-        .plan-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 25px;
-            padding: 40px 30px;
-            height: 100%;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
-        .plan-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 242, 255, 0.1);
+        .glass-card:hover {
+            border-color: #22c55e;
+            transform: translateY(-8px);
         }
-
-        .memory-label { 
-            color: var(--accent-cyan); 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            font-size: 0.85rem; 
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
+        .price-text {
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
         }
-
-        .price-box { font-size: 3rem; font-weight: 800; margin: 10px 0 25px; }
-        .price-box small { font-size: 1rem; color: #64748b; font-weight: 400; }
-
-        .spec-list { list-style: none; padding: 0; margin-bottom: 30px; }
-        .spec-list li { 
-            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); 
-            font-size: 0.95rem; color: #94a3b8; display: flex; justify-content: space-between;
+        .text-glow {
+            text-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
         }
-        .spec-list li b { color: #fff; }
-
-        .btn-order {
-            background: linear-gradient(135deg, var(--accent-cyan), #00a2ff);
-            color: #000;
-            width: 100%;
-            padding: 15px;
-            border-radius: 15px;
-            font-weight: 800;
-            text-decoration: none !important;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-        .btn-order:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3); color: #000; }
     </style>
 </head>
-<body>
+<body class="text-white antialiased">
 
-<nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Lord<span>Node</span></a>
-        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="minecraft.html">Minecraft</a></li>
-                <li class="nav-item"><a class="nav-link" href="vps.html">VPS Hosting</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Important</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="tos.html">Terms of Policy</a></li>
-                        <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="glass-nav w-full max-w-6xl rounded-2xl py-3 px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="font-extrabold text-xl tracking-tighter">LORDNODE<span class="text-green-500">.XYZ</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-[13px] font-bold text-gray-400">
+                <a href="https://billing.lordnode.xyz/" class="hover:text-white transition">Home</a>
+                <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="hover:text-white transition">Servers</a>
+                <a href="https://discord.gg/pP77THqwXR" class="hover:text-white transition">Discord</a>
+                <a href="tos.html" class="hover:text-white transition">Legal</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="https://panel.lordnode.xyz/" class="bg-white/5 border border-white/10 px-4 py-1.5 rounded-lg text-[11px] font-bold hover:bg-white/10 transition">PANEL</a>
+                <a href="https://billing.lordnode.xyz/" class="bg-green-600 text-black px-4 py-1.5 rounded-lg text-[11px] font-black hover:bg-green-500 transition shadow-lg shadow-green-500/20">CLIENT AREA</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pt-48 pb-16 text-center px-6">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-black tracking-[0.2em] mb-6 uppercase">
+            MUMBAI DATA CENTER LIVE 🇮🇳
         </div>
-    </div>
-</nav>
-
-<div class="hero-section">
-    <div class="container">
-        <h1 class="hero-title">Extreme <span>Minecraft</span> Performance</h1>
-        <div class="trust-bar">
-            <div class="trust-tag"><i class="fas fa-shield-virus"></i> DDoS Protected</div>
-            <div class="trust-tag"><i class="fas fa-clock"></i> 99.9% Uptime</div>
-            <div class="trust-tag"><i class="fas fa-headset"></i> 24/7 Support</div>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+            Next-Gen Host<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">Next Level!</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed mb-10">
+            Experience <span class="text-white font-semibold underline decoration-green-500/30">next-gen hosting</span> performance with Ryzen 9 nodes and enterprise DDoS protection. Join the elite.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#plans" class="bg-green-600 text-black px-10 py-4 rounded-2xl font-black hover:scale-105 transition shadow-xl shadow-green-500/20">GET STARTED</a>
+            <a href="https://discord.gg/pP77THqwXR" class="bg-white/5 border border-white/10 px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition">SUPPORT DISCORD</a>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="container pb-5">
-    <div class="row g-4">
-        <script>
-            const plans = [
-                { r: "2GB", p: "99₹", c: "1 vCore", d: "10GB" },
-                { r: "4GB", p: "199₹", c: "2 vCore", d: "20GB" },
-                { r: "8GB", p: "449₹", c: "3 vCore", d: "40GB" },
-                { r: "16GB", p: "950₹", c: "6 vCore", d: "80GB" },
-                { r: "32GB", p: "1899₹", c: "8 vCore", d: "100GB" }
-            ];
+    <section id="plans" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <div class="glass-card p-10 rounded-[2.5rem] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16.5L12 21.5L3 16.5V7.5L12 2.5L21 7.5V16.5Z"/></svg>
+                </div>
+                <h3 class="text-gray-500 font-bold text-xs tracking-widest uppercase mb-2">Stability Tier</h3>
+                <h2 class="text-3xl font-black mb-1">AMD EPYC 8224P</h2>
+                <p class="text-[10px] text-green-500 font-black mb-8 tracking-widest">MUMBAI-01 NODE</p>
+                
+                <div class="mb-8">
+                    <span class="text-6xl font-black price-text">₹100</span>
+                    <span class="text-gray-500 font-bold ml-1">/mo</span>
+                </div>
 
-            plans.forEach(plan => {
-                document.write(`
-                    <div class="col-lg-4 col-md-6">
-                        <div class="plan-card">
-                            <span class="memory-label">High-Speed ${plan.r} Memory</span>
-                            <div class="price-box">₹${plan.p}<small>/mo</small></div>
-                            <ul class="spec-list">
-                                <li>3.80GHz Platinium 8269Cy <b>${plan.c}</b></li>
-                                <li>Storage <b>${plan.d} NVMe</b></li>
-                                <li>Protection <b>DDoS L7</b></li>
-                                <li>Uptime <b>99.9%</b></li>
-                                <li>Database <b>MySQL Incl.</b></li>
-                            </ul>
-                            <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="btn-order">GET STARTED</a>
-                        </div>
-                    </div>
-                `);
-            });
-        </script>
-    </div>
-</div>
+                <ul class="space-y-4 mb-10 text-sm font-medium text-gray-400">
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> High Core Count Performance</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> DDR5 ECC Server Memory</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> Enterprise NVMe SSD</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> 99.9% Uptime SLA</li>
+                </ul>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="block text-center py-4 bg-white/5 border border-white/10 rounded-2xl font-black hover:bg-white hover:text-black transition-all">DEPLOY NOW</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-[2.5rem] border-2 border-green-500/20 relative shadow-2xl shadow-green-500/5">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-black px-4 py-1 rounded-full text-[10px] font-black tracking-widest">MOST POPULAR</div>
+                
+                <h3 class="text-gray-500 font-bold text-xs tracking-widest uppercase mb-2">Performance Tier</h3>
+                <h2 class="text-3xl font-black mb-1">Ryzen 9 9900X</h2>
+                <p class="text-[10px] text-green-500 font-black mb-8 tracking-widest">MUMBAI-02 NODE</p>
+                
+                <div class="mb-8">
+                    <span class="text-6xl font-black text-green-500 price-text">₹400</span>
+                    <span class="text-gray-500 font-bold ml-1">/mo</span>
+                </div>
+
+                <ul class="space-y-4 mb-10 text-sm font-medium text-gray-400">
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> 5.60GHz+ Single Core Power</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> Latest Gen DDR5 RAM</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> Gen5 Ultra-Speed NVMe</li>
+                    <li class="flex items-center gap-3"><span class="text-green-500">✔</span> 2.5TBps Global DDoS Filter</li>
+                </ul>
+
+                <a href="https://billing.lordnode.xyz/products/premium-mc-server" class="block text-center py-4 bg-green-500 text-black rounded-2xl font-black hover:bg-green-400 transition-all shadow-lg shadow-green-500/20">DEPLOY NOW</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="mt-20 bg-[#010205] border-t border-white/5 py-20 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-green-600 rounded-lg"></div>
+                    <span class="text-2xl font-black tracking-tighter">LORDNODE<span class="text-green-500">.XYZ</span></span>
+                </div>
+                <p class="text-gray-500 text-sm max-w-sm leading-relaxed">
+                    Premium high-frequency hosting tailored for gaming and business. Localized routing for Indian gamers with low-latency guaranteed.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.2em] mb-6 text-white/30">Support</h4>
+                <ul class="space-y-4 text-sm font-bold text-gray-500">
+                    <li><a href="https://discord.gg/pP77THqwXR" class="hover:text-green-500 transition">Contact Us</a></li>
+                    <li><a href="https://discord.gg/pP77THqwXR" class="hover:text-green-500 transition">Discord Support</a></li>
+                    <li><a href="https://billing.lordnode.xyz/" class="hover:text-green-500 transition">Billing Portal</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.2em] mb-6 text-white/30">Legal</h4>
+                <ul class="space-y-4 text-sm font-bold text-gray-500">
+                    <li><a href="tos.html" class="hover:text-green-500 transition underline decoration-green-500/10 underline-offset-8">Terms of Service</a></li>
+                    <li><a href="privacy.html" class="hover:text-green-500 transition underline decoration-green-500/10 underline-offset-8">Privacy Policy</a></li>
+                    <li><a href="tos.html" class="hover:text-green-500 transition underline decoration-green-500/10 underline-offset-8">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-black tracking-[0.15em] text-gray-600">
+            <p>COPYRIGHT © 2026 LORDNODE.XYZ | ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-8 mt-4 md:mt-0 uppercase">
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Mumbai Hub Online</span>
+                <span>Not an official Minecraft Product.</span>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
-
