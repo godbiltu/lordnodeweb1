@@ -3,167 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | LordNode</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Privacy Policy | LORDNODE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --background: #06080c;
-            --nav-bg: #0d1117;
-            --accent: #00ff88; 
-            --card-bg: #11161d;
-            --border: rgba(255, 255, 255, 0.08);
-            --text-gray: #94a3b8;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000000;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
-        body { background-color: var(--background); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        /* --- Clean Navbar --- */
-        .navbar { background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 15px 0; backdrop-filter: blur(10px); }
-        .navbar-brand { font-weight: 800; font-size: 1.6rem; color: #fff !important; }
-        .navbar-brand span { color: var(--accent); }
-        .nav-link { color: var(--text-gray) !important; font-weight: 600; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
-        
-        .dropdown-menu { background: #161b22; border: 1px solid var(--border); border-radius: 12px; padding: 10px; }
-        .dropdown-item { color: var(--text-gray) !important; font-weight: 500; border-radius: 8px; padding: 10px 15px; margin-bottom: 2px; }
-        .dropdown-item:hover { background: rgba(0, 255, 136, 0.1) !important; color: #fff !important; }
-        .dropdown-item i { width: 25px; color: var(--accent); }
 
-        /* --- Header --- */
-        .header { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(0, 255, 136, 0.05) 0%, transparent 70%); }
-        .header h1 { font-size: 3.5rem; font-weight: 800; }
-        .header span { color: var(--accent); }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        /* --- Policy Card --- */
-        .content-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 30px; padding: 50px; margin-top: -40px; }
-        h2 { color: var(--accent); font-weight: 800; margin-bottom: 20px; font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .policy-section { margin-bottom: 45px; }
-        p { color: var(--text-gray); line-height: 1.8; }
+        .policy-card {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
 
-        /* --- Discord Label --- */
-        .discord-bar { background: #5865F2; padding: 20px 0; border-radius: 20px; margin-top: 50px; }
-        .btn-discord { background: #fff; color: #5865F2; font-weight: 800; border-radius: 10px; padding: 10px 25px; text-decoration: none; transition: 0.3s; }
-        .btn-discord:hover { transform: scale(1.05); background: #f0f0f0; }
+        .btn-white {
+            background-color: #ffffff;
+            color: #000000;
+            transition: 0.3s;
+        }
 
-        /* --- Footer --- */
-        .footer { background: #0a0c10; padding: 80px 0 40px; border-top: 1px solid var(--border); margin-top: 80px; }
-        .footer-link { color: var(--text-gray); text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
-        .footer-link:hover { color: var(--accent); transform: translateX(5px); }
+        .btn-white:hover {
+            background-color: #d1d1d1;
+        }
+
+        h2 {
+            border-left: 3px solid #ffffff;
+            padding-left: 15px;
+            letter-spacing: -0.02em;
+        }
     </style>
 </head>
-<body>
+<body class="text-white antialiased">
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">Lord<span>Node</span></a>
-            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#lordNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="lordNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Minecraft Hosting</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/mc-server-hosting"><i class="fas fa-microchip"></i> Intel Platinum Series</a></li>
-                            <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/premium-mc-server"><i class="fas fa-bolt"></i> Ryzen 9 9900X Series</a></li>
-                        </ul>
-                    </li>
+    <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="glass-nav w-full max-w-6xl rounded-2xl py-3 px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="font-extrabold text-lg tracking-tight uppercase">LORDNODE</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-[11px] font-bold text-gray-400">
+                <a href="index.html" class="hover:text-white transition">HOME</a>
+                <a href="services.html" class="hover:text-white transition">SERVERS</a>
+                <a href="https://billing.lordnode.xyz/login?__cf_chl_tk=wP1lET8PAaCZ6Y2z7V1_il2f_yv41wdpuxgncFQV4uY-1771773968-1.0.1.1-hbDiVGLgcJHpg1MKO191nBzY.gp8A26p3_x1vCZV4iE" class="hover:text-white transition">STORE</a>
+                <a href="https://discord.gg/BtkyFJhYAa" class="hover:text-white transition">SUPPORT</a>
+            </div>
+            <a href="https://billing.lordnode.xyz/" class="btn-white px-5 py-2 rounded-lg text-[10px] font-black uppercase">Portal</a>
+        </nav>
+    </header>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Services</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="https://billing.lordnode.xyz/products/intel-vps"><i class="fas fa-server"></i> VPS Hosting</a></li>
-                            <li><a class="dropdown-item" href="https://billing.lordnode.xyz/"><i class="fas fa-globe"></i> Website Hosting</a></li>
-                            <li><a class="dropdown-item" href="https://billing.lordnode.xyz/"><i class="fas fa-robot"></i> Discord Bot Hosting</a></li>
-                        </ul>
-                    </li>
+    <section class="pt-52 pb-12 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tighter uppercase">Privacy Policy</h1>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm font-bold tracking-widest uppercase opacity-50">Data Authority & Protection</p>
+    </section>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Important</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="tos.html">Terms of Service</a></li>
-                            <li><a class="dropdown-item" href="tos.html">Refund Policy</a></li>
-                            <li><a class="dropdown-item active" href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <main class="max-w-4xl mx-auto px-6 mb-32">
+        <div class="policy-card p-8 md:p-16 rounded-[2.5rem]">
+            
+            <div class="mb-16">
+                <h2 class="text-2xl font-black mb-6 uppercase tracking-tight">Data Collection</h2>
+                <p class="text-gray-400 leading-relaxed font-medium">
+                    We collect essential information required to provide our hosting services. This includes your email address for account management, billing details for transaction processing, and automated server logs used exclusively for maintaining network security and preventing DDoS attacks.
+                </p>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-2xl font-black mb-6 uppercase tracking-tight">How We Use Data</h2>
+                <p class="text-gray-400 leading-relaxed font-medium">
+                    Your information is used strictly for service delivery, technical support, and billing. LordNode maintains a strict policy: <strong class="text-white">We never sell, rent, or trade your personal data</strong> with third-party marketing agencies. Data is only shared with trusted payment processors to complete your orders.
+                </p>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-2xl font-black mb-6 uppercase tracking-tight">Data Security</h2>
+                <p class="text-gray-400 leading-relaxed font-medium">
+                    We employ enterprise-grade AES-256 encryption for data at rest and SSL/TLS protocols for data in transit. Our infrastructure is monitored 24/7 to ensure that your personal information and server files remain protected from unauthorized access.
+                </p>
+            </div>
+
+            <div class="bg-white text-black p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h4 class="text-xl font-black uppercase leading-tight">Questions about data?</h4>
+                    <p class="text-sm font-bold opacity-70">Join our community for direct support.</p>
+                </div>
+                <a href="https://discord.gg/DNn8J5th4J" class="bg-black text-white px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:opacity-80 transition">Join Discord</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black border-t border-white/5 py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-black tracking-tighter uppercase">LORDNODE</span>
+                <p class="text-gray-600 text-[10px] mt-2 font-bold tracking-widest uppercase italic">The Sovereign Host</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 text-[10px] font-black text-gray-500 tracking-widest uppercase">
+                <a href="privacy.html" class="text-white transition">Privacy Policy</a>
+                <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
+                <a href="tos.html" class="hover:text-white transition">Refund Policy</a>
             </div>
         </div>
-    </nav>
-
-    <div class="header">
-        <div class="container">
-            <h1>Privacy <span>Policy</span></h1>
-            <p class="text-muted">Your data security is our top priority.</p>
-        </div>
-    </div>
-
-    <div class="container mb-5">
-        <div class="content-card shadow-lg">
-            <div class="policy-section">
-                <h2>Data Collection</h2>
-                <p>We collect essential information required to provide our hosting services. This includes your email address for account management, billing details for transaction processing, and automated server logs used exclusively for maintaining network security and preventing DDoS attacks.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2>How We Use Data</h2>
-                <p>Your information is used strictly for service delivery, technical support, and billing. LordNode maintains a strict policy: <strong>We never sell, rent, or trade your personal data</strong> with third-party marketing agencies. Data is only shared with trusted payment processors (like Stripe or PayPal) to complete your orders.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2>Data Security</h2>
-                <p>We employ enterprise-grade AES-256 encryption for data at rest and SSL/TLS protocols for data in transit. Our infrastructure is monitored 24/7 to ensure that your personal information and server files remain protected from unauthorized access.</p>
-            </div>
-
-            <div class="discord-bar">
-                <div class="container">
-                    <div class="row align-items-center px-4">
-                        <div class="col-md-9 text-center text-md-start">
-                            <h5 class="mb-1 fw-bold text-white">Have questions about your data?</h5>
-                            <p class="mb-0 text-white opacity-75 small">Join our community for direct support and updates.</p>
-                        </div>
-                        <div class="col-md-3 text-center text-md-end mt-3 mt-md-0">
-                            <a href="https://discord.gg/DNn8J5th4J" class="btn-discord">Join Discord</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row text-start">
-                <div class="col-lg-4 mb-4">
-                    <h3 class="fw-bold mb-3">LORD<span style="color: var(--accent);">NODE</span></h3>
-                    <p class="text-gray">Providing enterprise-grade hardware for gamers and developers worldwide.</p>
-                    <p class="text-gray small mt-4">&copy; Copyright 2026 LordNode. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5 class="fw-bold mb-3 text-white">Hosting</h5>
-                    <a href="https://billing.lordnode.xyz/products/mc-server-hosting" class="footer-link">Intel Minecraft</a>
-                    <a href="https://billing.lordnode.xyz/products/premium-mc-server" class="footer-link">Ryzen Minecraft</a>
-                    <a href="https://billing.lordnode.xyz/" class="footer-link">Web Hosting</a>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5 class="fw-bold mb-3 text-white">Support</h5>
-                    <a href="https://discord.gg/DNn8J5th4J" class="footer-link">Discord Server</a>
-                    <a href="#" class="footer-link">Knowledgebase</a>
-                    <a href="https://billing.lordnode.xyz/" class="footer-link">Billing</a>
-                </div>
-                <div class="col-lg-4 col-md-4 mb-4 text-lg-end">
-                    <h5 class="fw-bold mb-3 text-white">Legal</h5>
-                    <a href="tos.html" class="footer-link">Terms of Service</a>
-                    <a href="privacy.html" class="footer-link active" style="color: var(--accent);">Privacy Policy</a>
-                    <a href="tos.html" class="footer-link">Refund Policy</a>
-                </div>
-            </div>
-        </div>
+        <p class="text-center text-[9px] text-gray-800 mt-16 font-black tracking-[0.5em] uppercase">© 2026 LORDNODE | ALL RIGHTS RESERVED</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
