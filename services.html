@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servers | LORDNODE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000000;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #000000;
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+<body class="text-white antialiased">
+
+    <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="glass-nav w-full max-w-6xl rounded-2xl py-3 px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="font-extrabold text-lg tracking-tight uppercase">LORDNODE</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-[11px] font-bold text-gray-400">
+                <a href="index.html" class="hover:text-white transition">HOME</a>
+                <a href="server.html" class="text-white border-b border-white pb-1">SERVERS</a>
+                <a href="#" class="hover:text-white transition">STORE</a>
+                <a href="#" class="hover:text-white transition">SUPPORT</a>
+            </div>
+            <a href="#" class="btn-white px-5 py-2 rounded-lg text-[10px] font-black uppercase">Portal</a>
+        </nav>
+    </header>
+
+    <section class="pt-52 pb-16 text-center px-6">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase">OUR SERVERS</h1>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg font-medium">Enterprise hardware. Zero compromise. Managed by Lords.</p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-12 mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <div class="service-card p-10 rounded-[2.5rem] flex flex-col">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">GAME HOSTING</h3>
+                <p class="text-gray-500 text-sm mb-10 leading-relaxed">Ryzen 9 9900X performance for lag-free gaming.</p>
+                <a href="#" class="mt-auto btn-white w-full py-4 rounded-xl font-black text-[10px] uppercase tracking-widest text-center">Deploy Now</a>
+            </div>
+
+            <div class="service-card p-10 rounded-[2.5rem] flex flex-col">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">CLOUD</h3>
+                <p class="text-gray-500 text-sm mb-10 leading-relaxed">Scalable মুম্বাই instances for high-speed apps.</p>
+                <a href="#" class="mt-auto btn-white w-full py-4 rounded-xl font-black text-[10px] uppercase tracking-widest text-center">Deploy Now</a>
+            </div>
+
+            <div class="service-card p-10 rounded-[2.5rem] flex flex-col">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">WEB HOSTING</h3>
+                <p class="text-gray-500 text-sm mb-10 leading-relaxed">NVMe powered storage for elite websites.</p>
+                <a href="#" class="mt-auto btn-white w-full py-4 rounded-xl font-black text-[10px] uppercase tracking-widest text-center">Deploy Now</a>
+            </div>
+
+            <div class="service-card p-10 rounded-[2.5rem] flex flex-col">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">BARE METALS</h3>
+                <p class="text-gray-500 text-sm mb-10 leading-relaxed">Dedicated raw power for massive communities.</p>
+                <a href="#" class="mt-auto btn-white w-full py-4 rounded-xl font-black text-[10px] uppercase tracking-widest text-center">Deploy Now</a>
+            </div>
+
+            <div class="service-card p-10 rounded-[2.5rem] flex flex-col">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">DISCORD BOT</h3>
+                <p class="text-gray-500 text-sm mb-10 leading-relaxed">24/7 uptime for your bot kingdoms.</p>
+                <a href="#" class="mt-auto btn-white w-full py-4 rounded-xl font-black text-[10px] uppercase tracking-widest text-center">Deploy Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/5 py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-black tracking-tighter uppercase">LORDNODE</span>
+                <p class="text-gray-600 text-[10px] mt-2 font-bold tracking-widest uppercase italic">The Sovereign Host</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 text-[10px] font-black text-gray-500 tracking-widest uppercase">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Refund Policy</a>
+            </div>
+        </div>
+        <p class="text-center text-[9px] text-gray-800 mt-16 font-black tracking-[0.5em] uppercase">© 2026 LORDNODE | ALL RIGHTS RESERVED</p>
+    </footer>
+
+</body>
+</html>
+
