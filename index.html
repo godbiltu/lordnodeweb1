@@ -3,113 +3,543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LORDNODE | Next-Gen Performance</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Brixcloud | Next-Gen Minecraft Hosting</title>
     <style>
+        :root {
+            --primary: #FF6600; /* Neon Orange */
+            --bg-dark: #0f0f11;
+            --bg-card: #16161a;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a5;
+            --border-color: #24242b;
+            --success: #2ecc71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #000000;
-        }
-        
-        /* Subtle Grid Effect */
-        .grid-bg {
-            background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        .glass-nav {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 15, 17, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .btn-white {
-            background-color: #ffffff;
-            color: #000000;
-            transition: all 0.3s ease;
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
         }
 
-        .btn-white:hover {
-            background-color: #e5e5e5;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.3);
+        .logo span {
+            color: var(--primary);
         }
 
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: white;
+        nav a:hover, nav a.active {
+            color: var(--primary);
         }
 
-        .hero-text {
-            line-height: 0.9;
+        /* Hero Landing Section */
+        .hero {
+            padding: 120px 8% 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(255, 102, 0, 0.12) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Header Feature Badges */
+        .header-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            padding: 40px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feat-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feat-box .icon {
+            font-size: 24px;
+        }
+
+        .feat-box div h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .feat-box div p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Area */
+        .pricing-section {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+
+        .tier-title {
+            text-align: left;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 40px auto 20px;
+            max-width: 1100px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: left;
+            position: relative;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.15);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .card-header h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .specs-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .specs-list li span {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .velocity-addon {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            color: var(--success);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-footer .btn {
+            width: 100%;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        /* Custom / Flat Pricing Info Box */
+        .custom-plans-box {
+            max-width: 1100px;
+            margin: 60px auto 20px;
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .custom-plans-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .custom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .custom-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 15px;
+        }
+
+        /* Footer Area */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 80px;
         }
     </style>
 </head>
-<body class="text-white antialiased">
+<body>
 
-    <div class="grid-bg min-h-screen">
-        
-        <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
-            <nav class="glass-nav w-full max-w-6xl rounded-2xl py-3 px-6 flex items-center justify-between">
-                
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <span class="font-extrabold text-xl tracking-tighter uppercase">LORDNODE</span>
-                </div>
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">Brix<span>.cloud</span></div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#plans">Plans</a>
+            <a href="https://discord.com/channels/1459543372657201321/1480552939167809558">Support</a>
+        </nav>
+    </header>
 
-                <div class="hidden md:flex items-center gap-8 text-[11px] font-bold text-gray-400 tracking-widest">
-                    <a href="index.html" class="text-white">HOME</a>
-                    <a href="services.html" class="hover:text-white transition">SERVICES</a>
-                    <a href="https://billing.lordnode.xyz/login?__cf_chl_tk=wP1lET8PAaCZ6Y2z7V1_il2f_yv41wdpuxgncFQV4uY-1771773968-1.0.1.1-hbDiVGLgcJHpg1MKO191nBzY.gp8A26p3_x1vCZV4iE" class="hover:text-white transition">STORE</a>
-                    <a href="https://discord.gg/BtkyFJhYAa" class="hover:text-white transition">SUPPORT</a>
-                </div>
+    <!-- Hero Area -->
+    <section class="hero">
+        <h1>Brix.cloud Minecraft Hosting</h1>
+        <p>Premium hosting architecture designed to handle severe player traffic, enterprise-grade proxies, and custom networks smoothly.</p>
+        <a href="#plans" class="btn">Deploy Server Today</a>
+    </section>
 
-                <div class="flex items-center gap-3">
-                    <a href="https://billing.lordnode.xyz/login?__cf_chl_tk=wP1lET8PAaCZ6Y2z7V1_il2f_yv41wdpuxgncFQV4uY-1771773968-1.0.1.1-hbDiVGLgcJHpg1MKO191nBzY.gp8A26p3_x1vCZV4iE" class="btn-white px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider">Client Area</a>
-                </div>
-            </nav>
-        </header>
+    <!-- Top Infrastructure Feature Row -->
+    <section class="header-features">
+        <div class="feat-box">
+            <span class="icon">🌐</span>
+            <div>
+                <h4>Premium Datacenters</h4>
+                <p>Top-Notch Performance & Progress</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <span class="icon">💾</span>
+            <div>
+                <h4>Ultra-fast Storage</h4>
+                <p>Pure NVMe SSD Infrastructure</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <span class="icon">🛡️</span>
+            <div>
+                <h4>Reliable Infrastructure</h4>
+                <p>Maximum Uptime & Performance Stability</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <span class="icon">🎮</span>
+            <div>
+                <h4>Advanced Mitigation</h4>
+                <p>17 Tbit Heavy DDoS Protection</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="pt-64 pb-32 flex flex-col items-center text-center px-6">
+    <!-- Dynamic Pricing Section -->
+    <section class="pricing-section" id="plans">
+        <h2 class="section-title">Server Deployment Plans</h2>
+        <p class="section-subtitle">Select the performance config tier that fits your community needs</p>
+
+        <!-- STARTER PLANS -->
+        <div class="tier-title">🟢 Starter Plans</div>
+        <div class="pricing-grid">
             
-            <div class="mb-10 inline-flex items-center gap-2.5 bg-white/5 border border-white/10 px-5 py-2 rounded-full">
-                 <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                 <span class="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em]">India Mumbai Nodes Active 🇮🇳</span>
+            <!-- Dirt Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>🔰 Dirt</h3>
+                    <div class="price">₹250 <span>/ month</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>70% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>2 GB DDR4</span></li>
+                    <li>📦 Storage: <span>25 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>0 Allocations, 1 Backup</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
             </div>
 
-            <h1 class="hero-text text-6xl md:text-9xl font-black mb-8 tracking-tighter uppercase">
-                LORDNODE<br>
-                <span class="text-gray-500">NEXT LEVEL.</span>
-            </h1>
-
-            <p class="max-w-xl text-gray-500 text-lg md:text-xl mb-12 font-medium leading-relaxed">
-                Premium performance hosting for communities that demand the best. Lord-grade uptime, zero lag, and 24/7 expert support.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-5">
-                <a href="services.html" class="btn-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em]">View Services</a>
-                <a href="https://discord.gg/BtkyFJhYAa" class="btn-outline px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em]">Join Discord</a>
+            <!-- Iron Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>🧟 Iron</h3>
+                    <div class="price">₹500 <span>/ month</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>180% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>4 GB DDR4</span></li>
+                    <li>📦 Storage: <span>50 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>1 Allocation, 2 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
             </div>
 
-        </section>
+            <!-- Lapis Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>🛡️ Lapis</h3>
+                    <div class="price">₹750 <span>/ month</span></div>
+                </div>
+                <div class="velocity-addon">🛡️ Free 17 Tbit DDoS Protected Velocity Server</div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>200% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>6 GB DDR4</span></li>
+                    <li>📦 Storage: <span>75 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>1 Allocation, 2 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
+            </div>
 
-        <footer class="mt-20 py-10 border-t border-white/5 text-center">
-            <p class="text-[10px] text-gray-700 font-black tracking-[0.4em] uppercase">
-                © 2026 LORDNODE | Minimalist Infrastructure
-            </p>
-        </footer>
+        </div>
 
-    </div>
+        <!-- HIGH-PERFORMANCE PLANS -->
+        <div class="tier-title">🌟 High-Performance Plans</div>
+        <div class="pricing-grid">
+
+            <!-- Diamond Plan -->
+            <div class="price-card featured">
+                <div class="badge">POPULAR</div>
+                <div class="card-header">
+                    <h3>👾 Diamond</h3>
+                    <div class="price">₹1,000 <span>/ month</span></div>
+                </div>
+                <div class="velocity-addon">🛡️ Free 17 Tbit DDoS Protected Velocity Server</div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>250% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>8 GB DDR4</span></li>
+                    <li>📦 Storage: <span>100 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>2 Allocations, 2 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Redstone Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>☠️ Redstone</h3>
+                    <div class="price">₹1,250 <span>/ month</span></div>
+                </div>
+                <div class="velocity-addon">🛡️ Free 17 Tbit DDoS Protected Velocity Server</div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>300% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>10 GB DDR4</span></li>
+                    <li>📦 Storage: <span>120 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>2 Allocations, 2 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Emerald Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>🐉 Emerald</h3>
+                    <div class="price">₹1,500 <span>/ month</span></div>
+                </div>
+                <div class="velocity-addon">🛡️ Free 17 Tbit DDoS Protected Velocity Server</div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>350% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>12 GB DDR4</span></li>
+                    <li>📦 Storage: <span>140 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>2 Allocations, 2 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Netherite Plan -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>👑 Netherite (Ultimate)</h3>
+                    <div class="price">₹2,000 <span>/ month</span></div>
+                </div>
+                <div class="velocity-addon">🛡️ Free 17 Tbit DDoS Protected Velocity Server</div>
+                <ul class="specs-list">
+                    <li>⚡ CPU: <span>500% Limit</span></li>
+                    <li>📟 Processor: <span>AMD EPYC 7763</span></li>
+                    <li>💾 RAM: <span>16 GB DDR4</span></li>
+                    <li>📦 Storage: <span>200 GB NVMe SSD</span></li>
+                    <li>🎁 Features: <span>2 Allocations, 6 Backups</span></li>
+                </ul>
+                <div class="card-footer">
+                    <a href="https://discord.com/channels/1459543372657201321/1480552939167809558" class="btn">Select Plan</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CUSTOM PRICING BOX -->
+        <div class="custom-plans-box">
+            <h3>🛠️ Custom Plans Available</h3>
+            <p>Need a custom build configuration? We scale seamlessly at <strong>₹125 per GB RAM</strong></p>
+            <div class="custom-grid">
+                <div class="custom-item">3 GB = <strong>₹375</strong></div>
+                <div class="custom-item">5 GB = <strong>₹625</strong></div>
+                <div class="custom-item">7 GB = <strong>₹875</strong></div>
+                <div class="custom-item">20 GB = <strong>₹2,500</strong></div>
+            </div>
+            <br>
+            <button class="btn" style="background-color: transparent; border: 2px solid var(--primary); padding: 10px 25px; margin-top: 15px;">Open a Support Ticket to Get Started</button>
+        </div>
+
+    </section>
+
+    <!-- Footer area -->
+    <footer>
+        <p>&copy; 2026 Brix.cloud. All rights reserved. Powered by AMD EPYC 7763 Architecture.</p>
+    </footer>
 
 </body>
 </html>
